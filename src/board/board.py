@@ -51,7 +51,6 @@ class Board:
         self.board = np.copy(NEW_BOARD)
         self.board_2d = self.board.reshape(BOARD_DIMENSIONS)       
         self.illegal_move = illegal_move
-    # Vizualize board
     def get_board_as_string(self):
         rows, cols = self.board_2d.shape
         board_as_string = "-------\n"
@@ -104,9 +103,7 @@ class Board:
 
 def play_game():
     board = Board()
-    print("sadasdas")
     while board.is_gameover() == RESULT_NOT_OVER:
-        print("sadasdas")
         board.play_move(board.get_random_move())
         board.show_board()
     print("\n!!!!  X WINS  !!!!\n") if board.is_gameover() == RESULT_X_WINS else print("\n!!!!  O WINS  !!!!\n") 
